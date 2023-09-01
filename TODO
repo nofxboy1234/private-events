@@ -1,0 +1,2 @@
+Add controller filter to authenticate user before specific actions
+Add logout link using Turbo
