@@ -1,2 +1,31 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
+<div>
+  <%= @user.name %>
+</div>
+
+<div>
+  <%= @user.email %>
+</div>
+
+<div>
+  Number of events created by user: <%= @user.events.size %>
+</div>
+
+<ul>
+  <% @user.events.each do |event| %>
+    <li>
+      <% if event.location.size.positive? %>
+        <div><%= event.location %></div>
+      <% else %>
+        <div>Empty location</div>
+      <% end %>
+
+      <% if event.date %>
+        <div><%= event.date %></div>
+      <% else %>
+        <div>Empty date</div>
+      <% end %>
+    </li><br>
+  <% end %>
+</ul>
