@@ -2,3 +2,5 @@ Add controller filter to authenticate user before specific actions
 x Add logout link using Turbo
 
 check error with user sign in with button_to from events#index
+
+check what other people used for #build association reference method 
