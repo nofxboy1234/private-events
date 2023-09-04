@@ -1,2 +1,4 @@
 Add controller filter to authenticate user before specific actions
-Add logout link using Turbo
+x Add logout link using Turbo
+
+check error with user sign in with button_to from events#index
