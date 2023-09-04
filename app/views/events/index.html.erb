@@ -19,9 +19,27 @@
   <ul>
     <% @events.each do |event| %>
       <li>
-        <div><%= event.date %></div>
-        <div><%= event.location %></div>
-      </li>
+        <% if event.location.size.positive? %>
+          <div><%= event.location %></div>
+        <% else %>
+          <div>Empty location</div>
+        <% end %>
+
+        <% if event.date %>
+          <div><%= event.date %></div>
+        <% else %>
+          <div>Empty date</div>
+        <% end %>
+
+      <div>
+        <%= event.creator.name %>
+      </div>
+
+      <div>
+        <%= event.creator.email %>
+      </div>
+
+      </li><br>
     <% end %>
   </ul>
 <% end %>
