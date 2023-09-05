@@ -13,8 +13,13 @@ class EventsController < ApplicationController
 
   def create
     @user = current_user
+
     # @event = Event.new(event_params)
-    @event = @user.events.create(event_params)
+
+    # @event = @user.events.create(event_params)
+
+    @event = @user.events.build(event_params)
+    @event.save
 
     if @event
       redirect_to events_path
