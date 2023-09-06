@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :events, only: [:index, :show, :new, :create]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  # resources :event_users, only: [:create]
+  get 'event_users/attend_event'
+
   # Defines the root path route ("/")
   root "events#index"
 end

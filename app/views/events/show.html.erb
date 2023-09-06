@@ -2,3 +2,4 @@
 <div><%= @event.date %></div>
 <div><%= @event.creator.name %></div>
 <div><%= @event.creator.email %></div>
+<div><%= link_to 'Attend this event', event_users_attend_event_path({event: @event}) %></div>
