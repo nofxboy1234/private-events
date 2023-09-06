@@ -1,5 +1,3 @@
-- Refresh on route setups - get, post etc
-- Refresh on params hash -> only for POST from form? -> pass a hash as a value from show view to #attend_event?
 - check error with user sign in with button_to from events#index
 
 check what other people used for #build association reference method and overall project
