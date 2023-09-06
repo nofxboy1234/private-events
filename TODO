@@ -1,6 +1,8 @@
 Refresh on route setups
 Refresh on params hash -> only for POST from form? -> pass a hash as a value from show view to #attend_event?
 
+Refresh event page after attendee added instead of redirect?
+
 
 Add controller filter to authenticate user before specific actions
 x Add logout link using Turbo

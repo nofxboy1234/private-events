@@ -12,7 +12,10 @@ class EventUsersController < ApplicationController
     @user.attended_events << @event
     # @event.attendees << @user
 
-    redirect_to events_path
+    # redirect_to events_path
+
+    # redirect_to @event
+    render 'events/show'
   end
 
   # private

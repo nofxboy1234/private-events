@@ -2,4 +2,19 @@
 <div><%= @event.date %></div>
 <div><%= @event.creator.name %></div>
 <div><%= @event.creator.email %></div>
+
+<br>
+
+<div>Current attendees<div>
+<ul>
+<% @event.attendees.each do |attendee| %>
+  <li>
+    <div><%= attendee.name %></div>
+    <div><%= attendee.email %></div>
+  </li>
+<% end %>
+</ul>
+
+<br>
+
 <div><%= link_to 'Attend this event', event_users_attend_event_path({event: @event}) %></div>
