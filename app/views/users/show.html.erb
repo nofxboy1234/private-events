@@ -33,7 +33,7 @@
 
 <div>Past Events</div>
 <ul>
-<% @user.attended_events.where("date < :today_date", {today_date: Date.today}).order(date: :asc).each do |event| %>
+<% @user.attended_events.past_events.each do |event| %>
   <li>
     <% if event.location.size.positive? %>
       <div><%= event.location %></div>
@@ -75,7 +75,7 @@
 
 <div>Future Events</div>
 <ul>
-<% @user.attended_events.where("date > :today_date", {today_date: Date.today}).order(date: :asc).each do |event| %>
+<% @user.attended_events.future_events.each do |event| %>
   <li>
     <% if event.location.size.positive? %>
       <div><%= event.location %></div>
