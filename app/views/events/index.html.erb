@@ -13,6 +13,8 @@
 
 <h1>Events#index</h1>
 <p>Find me in app/views/events/index.html.erb</p>
+
+<div>All events</div>
 <% if @events.empty? %>
   <%= 'No events found' %>
 <% else%>
@@ -28,3 +30,47 @@
     <% end %>
   </ul>
 <% end %>
+
+<br>
+
+<div>Past Events</div>
+<ul>
+<% Event.past.each do |event| %>
+  <li>
+    <% if event.location.size.positive? %>
+      <div><%= event.location %></div>
+    <% else %>
+      <div>Empty location</div>
+    <% end %>
+
+    <% if event.date %>
+      <div><%= event.date %></div>
+    <% else %>
+      <div>Empty date</div>
+    <% end %>
+  </li><br>
+<% end %>
+</ul>
+
+<br>
+
+<div>Future Events</div>
+<ul>
+<% Event.future.each do |event| %>
+  <li>
+    <% if event.location.size.positive? %>
+      <div><%= event.location %></div>
+    <% else %>
+      <div>Empty location</div>
+    <% end %>
+
+    <% if event.date %>
+      <div><%= event.date %></div>
+    <% else %>
+      <div>Empty date</div>
+    <% end %>
+  </li><br>
+<% end %>
+</ul>
+
+<br>
