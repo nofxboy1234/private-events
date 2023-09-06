@@ -1,14 +1,6 @@
-Refresh on route setups - get, post etc
-Refresh on params hash -> only for POST from form? -> pass a hash as a value from show view to #attend_event?
-
-
-Add controller filter to authenticate user before specific actions
-x Add logout link using Turbo
-
-check error with user sign in with button_to from events#index
-Use _event partial for auto rendering the collection instead of iterating through them
-
-Add flash messages for EventUsersController#attend_event
+- Refresh on route setups - get, post etc
+- Refresh on params hash -> only for POST from form? -> pass a hash as a value from show view to #attend_event?
+- check error with user sign in with button_to from events#index
 
 check what other people used for #build association reference method and overall project
 
