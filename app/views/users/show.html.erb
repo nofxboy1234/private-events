@@ -31,12 +31,75 @@
   <% end %>
 </ul>
 
+<div>Past Events</div>
+<ul>
+<% @user.attended_events.where("date < :today_date", {today_date: Date.today}).order(date: :asc).each do |event| %>
+  <li>
+    <% if event.location.size.positive? %>
+      <div><%= event.location %></div>
+    <% else %>
+      <div>Empty location</div>
+    <% end %>
+
+    <% if event.date %>
+      <div><%= event.date %></div>
+    <% else %>
+      <div>Empty date</div>
+    <% end %>
+  </li><br>
+<% end %>
+</ul>
+
+<br>
+
+<div>Today's Events</div>
+<ul>
+<% @user.attended_events.where(date: Date.today).order(location: :asc).each do |event| %>
+  <li>
+    <% if event.location.size.positive? %>
+      <div><%= event.location %></div>
+    <% else %>
+      <div>Empty location</div>
+    <% end %>
+
+    <% if event.date %>
+      <div><%= event.date %></div>
+    <% else %>
+      <div>Empty date</div>
+    <% end %>
+  </li><br>
+<% end %>
+</ul>
+
+<br>
+
+<div>Future Events</div>
+<ul>
+<% @user.attended_events.where("date > :today_date", {today_date: Date.today}).order(date: :asc).each do |event| %>
+  <li>
+    <% if event.location.size.positive? %>
+      <div><%= event.location %></div>
+    <% else %>
+      <div>Empty location</div>
+    <% end %>
+
+    <% if event.date %>
+      <div><%= event.date %></div>
+    <% else %>
+      <div>Empty date</div>
+    <% end %>
+  </li><br>
+<% end %>
+</ul>
+
+<br>
+
 <div>
   Number of events user is attending: <%= @user.attended_events.size %>
 </div>
-
-<ul>
-  <% @user.attended_events.each do |event| %>
+<div>All Events</div>
+<ol>
+  <% @user.attended_events.order(date: :asc).each do |event| %>
     <li>
       <% if event.location.size.positive? %>
         <div><%= event.location %></div>
@@ -49,7 +112,6 @@
       <% else %>
         <div>Empty date</div>
       <% end %>
-
     </li><br>
   <% end %>
-</ul>
+</ol>
