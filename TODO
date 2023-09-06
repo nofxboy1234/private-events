@@ -1,7 +1,5 @@
-Refresh on route setups
+Refresh on route setups - get, post etc
 Refresh on params hash -> only for POST from form? -> pass a hash as a value from show view to #attend_event?
-
-Refresh event page after attendee added instead of redirect?
 
 
 Add controller filter to authenticate user before specific actions
@@ -12,5 +10,5 @@ Use _event partial for auto rendering the collection instead of iterating throug
 
 Add flash messages for EventUsersController#attend_event
 
-check what other people used for #build association reference method 
+check what other people used for #build association reference method and overall project
 
