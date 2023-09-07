@@ -18,6 +18,15 @@ class EventUsersController < ApplicationController
     # render 'events/show'
   end
 
+  def unattend_event
+    @user = current_user
+
+    @event = Event.find(params[:event])
+    @user.attended_events.delete(@event)
+
+    redirect_to @event
+  end
+
   # private
 
   # def event_user_params

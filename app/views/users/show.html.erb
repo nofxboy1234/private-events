@@ -16,7 +16,7 @@
   <% @user.events.each do |event| %>
     <li>
       <% if event.location.size.positive? %>
-        <div><%= event.location %></div>
+        <div><%= link_to event.location, event %></div>
       <% else %>
         <div>Empty location</div>
       <% end %>
@@ -39,7 +39,7 @@
 <% @user.attended_events.past_events.each do |event| %>
   <li>
     <% if event.location.size.positive? %>
-      <div><%= event.location %></div>
+      <div><%= link_to event.location, event %></div>
     <% else %>
       <div>Empty location</div>
     <% end %>
@@ -60,7 +60,7 @@
 <% @user.attended_events.where(date: Date.today).order(location: :asc).each do |event| %>
   <li>
     <% if event.location.size.positive? %>
-      <div><%= event.location %></div>
+      <div><%= link_to event.location, event %></div>
     <% else %>
       <div>Empty location</div>
     <% end %>
@@ -81,7 +81,7 @@
 <% @user.attended_events.future_events.each do |event| %>
   <li>
     <% if event.location.size.positive? %>
-      <div><%= event.location %></div>
+      <div><%= link_to event.location, event %></div>
     <% else %>
       <div>Empty location</div>
     <% end %>
