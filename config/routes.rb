@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # resources :event_users, only: [:create]
   get 'event_users/attend_event'
   get 'event_users/unattend_event'
+  get 'event_users/invite'
 
   # Defines the root path route ("/")
   root "events#index"

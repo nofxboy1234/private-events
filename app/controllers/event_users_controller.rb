@@ -27,6 +27,16 @@ class EventUsersController < ApplicationController
     redirect_to @event
   end
 
+  def invite
+    # binding.pry
+    @user = User.find(params[:invite_user])
+    @event = Event.find(params[:event])
+    puts "invite #{@user.name} to this event"
+    @event.attendees << @user
+
+    redirect_to @event
+  end
+
   # private
 
   # def event_user_params

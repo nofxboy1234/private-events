@@ -21,3 +21,16 @@
 <% if @event.attendees.include?(current_user) %>
   <div><%= link_to 'Unattend this event', event_users_unattend_event_path({event: @event}) %></div>
 <% end %>
+
+<br>
+
+<% if current_user == @event.creator %>
+  <%= form_tag event_users_invite_path, method: :get do |form| %>
+    <%= select_tag :invite_user, options_for_select(@valid_invitees) %><br>
+    <%= hidden_field_tag :event, @event.id %>
+    <%= submit_tag 'Invite user' %>
+  <% end %>
+  <br>
+  <%= select_tag 'invite user', options_for_select(@valid_invitees) %>
+  <div><%= link_to 'Invite another user', event_users_invite_path({event: @event, user: 'dylan'}) %></div>
+<% end %>

@@ -5,8 +5,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    # binding.pry
-    # @user = current_user
+    @valid_invitees = User.all.map { |user| [user.name, user.id] }
   end
 
   def new
