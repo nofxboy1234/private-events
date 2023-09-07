@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   
   # get 'events/index'
-  resources :events, only: [:index, :show, :new, :create, :destroy]
+  resources :events, only: [:index, :show, :new, :create, :destroy, :edit, :update]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # resources :event_users, only: [:create]
