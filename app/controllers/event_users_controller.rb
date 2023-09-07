@@ -14,8 +14,8 @@ class EventUsersController < ApplicationController
 
     # redirect_to events_path
 
-    # redirect_to @event
-    render 'events/show'
+    redirect_to @event
+    # render 'events/show'
   end
 
   # private

@@ -13,6 +13,23 @@
   <body>
     <p class='notice'><%= notice %></p>
     <p class='alert'><%= alert %></p>
+
+    <% if user_signed_in? %>
+      <%= current_user.name %><br />
+      <%= current_user.email %><br />
+      <br>
+      <%= link_to 'Show user', current_user %><br />
+      <%= link_to 'Edit user', edit_user_registration_path %><br>
+      <%= link_to 'Create New Event', new_event_path %><br />
+      <%= link_to 'All Events', events_path %><br />
+      <br>
+
+      <%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
+    <% else %>
+      <%= link_to 'Sign in', new_user_session_path %>
+    <% end %>
+    <br><br>
+
     <%= yield %>
   </body>
 </html>
