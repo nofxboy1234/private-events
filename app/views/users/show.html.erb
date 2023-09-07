@@ -27,6 +27,8 @@
         <div>Empty date</div>
       <% end %>
 
+      <div><%= link_to 'Destroy', event_path(event), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}  %></div>
+
     </li><br>
   <% end %>
 </ul>
