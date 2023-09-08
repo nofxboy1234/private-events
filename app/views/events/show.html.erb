@@ -17,9 +17,10 @@
 
 <br>
 
-<div><%= link_to 'Attend this event', event_users_attend_event_path({event: @event}) %></div>
 <% if @event.attendees.include?(current_user) %>
   <div><%= link_to 'Unattend this event', event_users_unattend_event_path({event: @event}) %></div>
+<% else %>
+  <div><%= link_to 'Attend this event', event_users_attend_event_path({event: @event}) %></div>
 <% end %>
 
 <br>
