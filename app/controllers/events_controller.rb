@@ -5,7 +5,11 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @valid_invitees = User.all.map { |user| [user.name, user.id] }
+    current_invitees = @event.attendees
+    @valid_invitees = User.all.filter_map do |user|
+      [user.name, user.id] unless current_invitees.include?(user) ||
+                                  user.eql?(current_user)
+    end
   end
 
   def new
