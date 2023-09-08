@@ -31,7 +31,4 @@
     <%= hidden_field_tag :event, @event.id %>
     <%= submit_tag 'Invite user' %>
   <% end %>
-  <br>
-  <%= select_tag 'invite user', options_for_select(@valid_invitees) %>
-  <div><%= link_to 'Invite another user', event_users_invite_path({event: @event, user: 'dylan'}) %></div>
 <% end %>
