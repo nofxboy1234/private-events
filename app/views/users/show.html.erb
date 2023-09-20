@@ -28,6 +28,11 @@
       <% end %>
 
       <div><%= link_to 'Destroy', event_path(event), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}  %></div>
+      
+      <%= form_with url: event_path(event), method: :delete do |form| %>
+        <%= form.submit 'Destroy' %>
+      <% end %>
+
       <div><%= link_to 'Edit', edit_event_path(event) %></div>
 
     </li><br>
